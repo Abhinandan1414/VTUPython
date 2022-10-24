@@ -27,12 +27,11 @@ def insertion_sort_improve(nlist):
     for index in range(1,len(nlist)):
         currentvalue = nlist[index]
         position = index
-
         while position>0 and nlist[position-1]>currentvalue:
             comparison1+= 1
             nlist[position]=nlist[position-1]
+            swaps1+= 1
             position = position-1
-        swaps1+= 1
         nlist[position]=currentvalue
     print(comparison1,"Comparisons and", swaps1, "Swaps")
     return
