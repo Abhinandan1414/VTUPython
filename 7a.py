@@ -1,15 +1,17 @@
 import math
+
 class shape:
+
     def __init__(self):
         self.calc_area = 0
-        pass
+        
     
 class triangle(shape):
+
     def __init__(self, a, b, c):
         self.a=a
         self.b=b
         self.c=c
-        
 
     def area(self):
         s=(self.a+self.b+self.c)/2
@@ -17,6 +19,7 @@ class triangle(shape):
         return calc_area
 
 class circle(shape):
+
     def __init__(self,r):
         self.r = r
 
@@ -25,6 +28,7 @@ class circle(shape):
         return self.calc_area
 
 class rectangle(shape):
+
     def __init__(self,b,h):
         self.b = b
         self.h = h
@@ -34,6 +38,7 @@ class rectangle(shape):
         return self.calc_area
 
 def function_main():
+    
     t1=triangle(4,13,15)
     c1=circle(5)
     r1=rectangle(5,6)
