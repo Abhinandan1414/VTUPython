@@ -29,4 +29,6 @@ def function_main():
     octal_to_hex(entered_octal_value)
     return
 
-function_main()
+if __name__=='__main__':
+    print(__doc__)
+    function_main()

@@ -32,5 +32,7 @@ def function_main():
     desired_line_count = int(input("How many lines to be printed"))
     count_occurrences_of_given_word(file_to_be_searched,word_to_be_searched)
     file_read_desired_lines(file_to_be_searched,desired_line_count)
-
-function_main()
+    
+if __name__=='__main__':
+    print(__doc__)
+    function_main()

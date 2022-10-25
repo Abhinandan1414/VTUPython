@@ -38,7 +38,7 @@ class rectangle(shape):
         return self.calc_area
 
 def function_main():
-    
+
     t1=triangle(4,13,15)
     c1=circle(5)
     r1=rectangle(5,6)
@@ -46,6 +46,8 @@ def function_main():
     print("Area of circle is",c1.area())
     print("Area of rectangle is",r1.area())
 
-function_main()
+if __name__=='__main__':
+    print(__doc__)
+    function_main()
 
 

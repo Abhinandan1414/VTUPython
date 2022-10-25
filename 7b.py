@@ -37,5 +37,7 @@ def main_function():
     emp1.set_data(2,'reddy','male','hyderabad',66000)
     emp1.display_employee_data()
 
-main_function()
+if __name__=='__main__':
+    print(__doc__)
+    main_function()
 	

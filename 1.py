@@ -23,5 +23,7 @@ def function_main():
     print("Best two",return_list)
     print("Average of best two tests is",avg_of_best_two)
 
-function_main()
+if __name__=='__main__':
+    print(__doc__)
+    function_main()
 

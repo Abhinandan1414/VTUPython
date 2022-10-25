@@ -60,7 +60,9 @@ def function_main():
     string_num1 = palindrome_string_input("12131")
     base_num = string_num1
     base_num.check_palindrome()
-   
-function_main()
+
+if __name__=='__main__':
+    print(__doc__)   
+    function_main()
 
 

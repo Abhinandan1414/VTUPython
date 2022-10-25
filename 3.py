@@ -56,5 +56,6 @@ def main_function():
     return
 
     
-
-main_function()
+if __name__=='__main__':
+    print(__doc__)
+    main_function()

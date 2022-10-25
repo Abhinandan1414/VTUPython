@@ -11,4 +11,6 @@ def main_function():
         print('Not a valid directory for archive')
     make_archive(archive_name, 'zip', root_dir)
     
-main_function()
+if __name__=='__main__':
+    print(__doc__)    
+    main_function()

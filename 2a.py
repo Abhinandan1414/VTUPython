@@ -14,5 +14,6 @@ def main_function():
     for i in range(nterms):
        print(nth_term_of_fibonnaci(i), end=' ')
 
-
-main_function()
+if __name__=='__main__':
+    print(__doc__)
+    main_function()

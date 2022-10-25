@@ -31,4 +31,6 @@ def function_main():
     for i in range(digits_in_decimal):
         print(i,"Occured",retuned_dictionary[i],"times")
 
-function_main()
+if __name__=='__main__':
+    print(__doc__)
+    function_main()
