@@ -1,9 +1,12 @@
 """
 Taken from url = https://github.com/TheAlgorithms/Python.git
 
+MIT License
+
 This is a pure Python implementation of the merge sort algorithm
 
 """
+import random
 def merge_sort(collection):
   
     def merge(left, right):
@@ -22,7 +25,11 @@ def merge_sort(collection):
 
 def function_main():
     
-    unsorted = [14,46,43,27,57,41,45,21,70]
-    print(merge_sort(unsorted), sep=",")
+    
+    unsorted = random.sample(range(0, 50), 50)
+    print("Unsorted: ",unsorted)
+    sorted_list = merge_sort(unsorted)
+    print("Sorted: ",sorted_list)
+    #print(merge_sort(unsorted), sep=",")
     
 function_main()
