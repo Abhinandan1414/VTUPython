@@ -1,3 +1,8 @@
+'''
+4.a
+Write a python program to implement insertion sort and merge sort using lists
+'''
+
 import time
 import random
 comparison,swaps,comparison1,swaps1 = 0,0,0,0

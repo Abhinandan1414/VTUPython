@@ -1,3 +1,10 @@
+'''
+7.a
+By using the concept of inheritance write a python program to find the area of triangle,
+circle and rectangle.
+'''
+
+
 import math
 
 class shape:

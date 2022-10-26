@@ -1,3 +1,10 @@
+'''
+5.a
+    Write a function called isphonenumber () to recognize a pattern 415-555-4242 without
+using regular expression and also write the code to recognize the same pattern using
+regular expression.
+'''
+
 def isPhoneNumber(text):
     if len(text) != 12:
         return False

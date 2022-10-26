@@ -1,3 +1,9 @@
+'''
+1.a
+Write a python program to find the best of two test average marks out of three test’s
+marks accepted from the user.
+'''
+
 def list_avg(test_marks):
     return sum(test_marks)/ len(test_marks)
 

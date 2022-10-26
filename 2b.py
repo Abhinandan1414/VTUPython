@@ -1,3 +1,8 @@
+'''
+2.b
+Develop a python program to convert binary to decimal, octal to hexadecimal using
+functions
+'''
 def binary_to_decimal(binary):
     binary1 = binary
     decimal, i, n = 0, 0, 0

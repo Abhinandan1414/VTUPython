@@ -1,3 +1,11 @@
+
+'''
+3.a
+ Write a Python program that accepts a sentence and find the number of words, digits,
+uppercase letters and lowercase letters.
+3.b
+Write a Python program to find the string similarity between two given strings
+'''
 from difflib import SequenceMatcher
 
 def similarity_ratio_between_two_strings(string1,string2):

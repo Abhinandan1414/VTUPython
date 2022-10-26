@@ -1,3 +1,13 @@
+'''
+6.a
+Write a python program to accept a file name from the user and perform the following
+operations
+1. Display the first N line of the file
+2. Find the frequency of occurrence of the word accepted from the user in the
+file
+'''
+
+
 def count_occurrences_of_given_word(file_to_be_searched, passed_word):
     passed_word_count = 0
    
