@@ -5,7 +5,7 @@ Write a python program to implement insertion sort and merge sort using lists
 
 import time
 import random
-comparison,swaps,comparison1,swaps1 = 0,0,0,0
+comparison,swaps = 0,0
 
 # Nearly Brute Force
 def insertion_sort_old(unsorted_list):
