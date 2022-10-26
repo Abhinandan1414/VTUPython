@@ -1,40 +1,22 @@
-# Importing required modules
 import requests as req
 import os, bs4
+import json
 
-# Storing website URL
-url = 'https://xkcd.com/'
-# Make Directory to store image
+
+base_url = 'https://xkcd.com/'
 os.makedirs('xkcd', exist_ok=True)
-# exist_ok prevent program from throwing an exception if the folder existed
-
-n = input("Input the comic number ")
-# Append the user comic number in the url
-url += n
-print('Downloading image from %s...' % url)
-# Request the url from the web
-res = req.get(url)
-
-# Now Store the HTML page that is found in the url
+entered_num = input("Input the comic number ")
+base_url += entered_num
+print('Downloading image from %s...' % base_url)
+res = req.get(base_url)
 soup = bs4.BeautifulSoup(res.text,"html.parser")
+comic_elem = soup.select('#comic img')
+comic_url = 'http:' + comic_elem[0].get('src')
 
-# Find the Element that contain the image tag
-comicElem = soup.select('#comic img')
+res = req.get(comic_url)
 
-# Now get that source of the image and make it as a url
-comicUrl = 'http:' + comicElem[0].get('src')
-
-# Request the url from the web
-res = req.get(comicUrl)
-
-# Save the file in the directory
-# wd means it is open for writing in binary mode
-imageFile = open(os.path.join('xkcd', os.path.basename(comicUrl)), 'wb')
-print(imageFile)
-print(res.iter_content(1))
+imageFile = open(os.path.join('xkcd', os.path.basename(comic_url)), 'wb')
 for chunk in res.iter_content(1):
-	# Writing the binary image file
 	imageFile.write(chunk)
-# Closing the binary image file
 imageFile.close()
-print('Successfully downloaded')
+print('Downloaded the image file')
