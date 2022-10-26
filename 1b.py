@@ -5,7 +5,7 @@ also count the number of occurrences of each digit in the input number.
 '''
 
 def count_occurrences_of_digits(num):
-    dictionary = {0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0,10:0}
+    dictionary = {0:0,1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0}
     temp = num
     while(temp > 0):
         dig=temp % 10

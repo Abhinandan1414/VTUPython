@@ -19,7 +19,7 @@ def function_main():
     return_list = []
     first_test_marks = int(input('Enter the first test marks'))
     second_test_marks = int(input('Enter the second test marks'))
-    third_test_marks = int(input('Enter the first test marks'))
+    third_test_marks = int(input('Enter the third test marks'))
     passed_list.append(first_test_marks)
     passed_list.append(second_test_marks)
     passed_list.append(third_test_marks)
