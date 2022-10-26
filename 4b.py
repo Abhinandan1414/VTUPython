@@ -1,3 +1,4 @@
+# Courtesy https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-search-and-sorting-exercise-8.php
 def mergeSort(nlist):
     print("Splitting ",nlist)
     if len(nlist)>1:

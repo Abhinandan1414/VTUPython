@@ -36,15 +36,15 @@ def insertion_sort_improve(nlist):
     return
 
 # Courtesy https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-search-and-sorting-exercise-8.php
-def mergeSort(nlist):
-    #print("Splitting ",nlist)
+def merge_sort(nlist):
+    print("Splitting ",nlist)
     if len(nlist)>1:
         mid = len(nlist)//2
         lefthalf = nlist[:mid]
         righthalf = nlist[mid:]
 
-        mergeSort(lefthalf)
-        mergeSort(righthalf)
+        merge_sort(lefthalf)
+        merge_sort(righthalf)
         i=j=k=0       
         while i < len(lefthalf) and j < len(righthalf):
             if lefthalf[i] < righthalf[j]:
@@ -64,30 +64,22 @@ def mergeSort(nlist):
             nlist[k]=righthalf[j]
             j=j+1
             k=k+1
-    #print("Merging ",nlist)
+    print("Merging ",nlist)
 
-data = [14,46,43,27,57,41,45,21,70]
-data1 = [14,46,43,27,57,41,45,21,70]
-data2 = [14,46,43,27,57,41,45,21,70]
-randomlist = random.sample(range(0, 100000), 100000)
+# data = [14,46,43,27,57,41,45,21,70]
+# data1 = [14,46,43,27,57,41,45,21,70]
+# data2 = [14,46,43,27,57,41,45,21,70]
+randomlist = random.sample(range(0, 50), 50)
 data = randomlist.copy()
 data1 = randomlist.copy()
 data2 = randomlist.copy()
-start = time.time()
-#insertion_sort_old(data)
+
+insertion_sort_old(data)
 print('Sorted Array in Ascending Order:')
-#print(data)
-end = time.time()
-print('Time taken by Brute Force:',end-start)
-start1 = time.time()
+print(data)
 insertion_sort_improve(data1)
 print('Sorted Array in Ascending Order:')
-#print(data1)
-end1 = time.time()
-print("Time taken by improved selection sort:",end1-start1)
-start2 = time.time()
-mergeSort(data2)
+print(data1)
+merge_sort(data2)
 print('Sorted Array in Ascending Order:')
-#print(data2)
-end2 = time.time()
-print("Time taken by merge sort:",end2-start2)
+print(data2)
