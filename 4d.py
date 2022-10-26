@@ -15,6 +15,7 @@ class py_solution:
         return int_val
 
 print(py_solution().roman_to_int('IV'))
+print(py_solution().roman_to_int('VII'))
 print(py_solution().roman_to_int('MMMCMLXXXVI'))
 print(py_solution().roman_to_int('MMMM'))
 print(py_solution().roman_to_int('C'))

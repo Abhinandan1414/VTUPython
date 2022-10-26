@@ -34,6 +34,8 @@ def main_function():
     emp=employee()
     emp.set_data(1,'ramy','male','hyderabad',55000)
     emp.display_employee_data()
+    emp.set_data(1,'ramy','male','hyderabad',70000)
+    emp.display_employee_data()
     emp1 = employee()
     emp1.set_data(2,'reddy','male','hyderabad',66000)
     emp1.display_employee_data()

@@ -9,8 +9,8 @@ import re
 phoneNumRegex = re.compile(r'\+\d\d\d\d\d\d\d\d\d\d\d\d')
 emailRegex = re.compile(r'\w+\@\w+\.\w+')
 
-mo = phoneNumRegex.search('(+919900889977)')
+mo = phoneNumRegex.search('(+919900889977) is my mobile number')
 print(mo.group())
 
-em = emailRegex.search('Abhinandan@gmail.com')
+em = emailRegex.search('Abhinandan@gmail.com is my email address')
 print(em.group())

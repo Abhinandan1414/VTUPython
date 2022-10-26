@@ -23,14 +23,9 @@ def insertion_sort_old(unsorted_list):
     print(comparison,"Comparisons and", swaps, "Swaps")
     return
 
-
-
-
 randomlist = random.sample(range(0, 50), 50)
 data = randomlist.copy()
-data1 = randomlist.copy()
-data2 = randomlist.copy()
-
+print("Unsorted list",data)
 insertion_sort_old(data)
-print('Sorted Array in Ascending Order:')
+print('Sorted list in Ascending Order:')
 print(data)
