@@ -1,3 +1,8 @@
+''' 
+10.a
+ Write a python program to combine pages from many PDFs
+ '''
+
 from PyPDF2 import PdfFileMerger
 
 #Create and instance of PdfFileMerger() class

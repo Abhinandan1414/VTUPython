@@ -1,4 +1,7 @@
-# import required modules
+'''
+10.b
+Write a python program to fetch current weather data from the JSON file
+'''
 import requests, json
 
 api_key = "360396a690bbdadea6dafcdfecd8df66"

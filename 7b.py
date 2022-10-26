@@ -1,4 +1,9 @@
-
+''' 
+7.b
+Write a python program by creating a class called Employee to store the details of
+Name, Employee_ID, Department and Salary, and implement a method to update salary
+of employees belonging to a given department.
+'''
 class employee:
     def __init__(self):
         __id = 0

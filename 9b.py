@@ -1,4 +1,8 @@
-# import pandas lib as pd
+''' 
+9.b
+Demonstrate python program to read the data from the spreadsheet and write the data
+in to the spreadsheet
+'''
 import pandas as pd
 from pandas import DataFrame
 

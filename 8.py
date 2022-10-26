@@ -1,3 +1,8 @@
+''' 
+8.
+ Write a python program to find the whether the given input is palindrome or not (for
+both string and integer) using the concept of polymorphism and inheritance.
+'''
 import math
 
 class number:
