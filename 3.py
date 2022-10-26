@@ -55,7 +55,7 @@ def main_function():
     if choice != 1 and choice != 2:
         print("Please enter 1 or 2 only")
     if choice == 1:
-        input_str = input("Enter the input string whos statistics you want")
+        input_str = input("Enter the input string whos statistics you want ")
         string_test(input_str)
     elif choice == 2:
         string1 = input("Enter the first string")
