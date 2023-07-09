@@ -13,6 +13,7 @@ def weighted_split(original_list, weight_list,absolute_machine_speeds):
         machine_i_test_set_exec_time.append(sum(machine_i_test_set[i])/absolute_machine_speeds[i])
     print(machine_i_test_set)
     print(machine_i_test_set_exec_time)
+    print(sum(machine_i_test_set_exec_time))
 
 def identical_machines_total_execution_time(x,n):
     machine_i_test_set= []
@@ -26,16 +27,19 @@ def identical_machines_total_execution_time(x,n):
         machine_i_test_set_exec_time.append(sum(machine_i_test_set[i]))
     print(machine_i_test_set)
     print(machine_i_test_set_exec_time)
+    print(sum(machine_i_test_set_exec_time))
 
 def main():
     data_set = [20,30,40,50,60,10,12,13,15,20,24,20]
     absolute_machine_speeds = [1,2,2,1]
     weighted_machine_speeds = [.16,.32,.32,.16]
+    identical_machine_speeds = [1,1,1,1]
     '''
     n = int(input("Enter the machines at disposal"))
     for i in range(n):
         print(identical_machines_total_execution_time(data_set,i+1))
     '''
+    identical_machines_total_execution_time(data_set,len(identical_machine_speeds))
     weighted_split(data_set,weighted_machine_speeds,absolute_machine_speeds)
 main()
     
