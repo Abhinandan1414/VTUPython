@@ -61,6 +61,8 @@ def main():
                          sep=',')
 
     data_set = df["execution_time"].to_list()
+    
+    print("Data set is",data_set)
 
     absolute_machine_speeds = [1, 2, 2, 1]
     weighted_machine_speeds = [.16, .32, .32, .16]
