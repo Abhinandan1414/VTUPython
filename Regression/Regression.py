@@ -30,7 +30,7 @@ def identical_machines_total_execution_time(x,n):
     print(sum(machine_i_test_set_exec_time))
 
 def main():
-    data_set = [20,30,40,50,60,10,12,13,15,20,24,20]
+    data_set = [20,30,40,50,13,10,12,60,15,20,24,20]
     absolute_machine_speeds = [1,2,2,1]
     weighted_machine_speeds = [.16,.32,.32,.16]
     identical_machine_speeds = [1,1,1,1]
