@@ -1,6 +1,7 @@
 import math
+import pandas
+import os
 def weighted_split(original_list, weight_list,absolute_machine_speeds):
-    
     machine_i_test_set = []
     machine_i_test_set_exec_time = []
     prev_index = 0
@@ -23,6 +24,7 @@ def identical_machines_total_execution_time(x,n):
         machine_i_test_set.append([])
     for i in range(len(x)):
         machine_i_test_set[i%n].append(x[i])
+        
     for i in range(n):
         machine_i_test_set_exec_time.append(sum(machine_i_test_set[i]))
     print(machine_i_test_set)
@@ -30,17 +32,18 @@ def identical_machines_total_execution_time(x,n):
     print(sum(machine_i_test_set_exec_time))
 
 def main():
-    data_set = [20,30,40,50,13,10,12,60,15,20,24,20]
+    df = pandas.read_csv(os.path.join(os.getcwd(),"Regression\\testexecutiondata.csv"),
+                             sep=',')
+                        
+    data_set= df["execution_time"].to_list()
+            
     absolute_machine_speeds = [1,2,2,1]
     weighted_machine_speeds = [.16,.32,.32,.16]
     identical_machine_speeds = [1,1,1,1]
-    '''
-    n = int(input("Enter the machines at disposal"))
-    for i in range(n):
-        print(identical_machines_total_execution_time(data_set,i+1))
-    '''
-    identical_machines_total_execution_time(data_set,len(identical_machine_speeds))
     weighted_split(data_set,weighted_machine_speeds,absolute_machine_speeds)
+    identical_machines_total_execution_time(data_set,len(identical_machine_speeds))
+    
+    
 main()
     
     
