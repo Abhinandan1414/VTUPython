@@ -3,7 +3,7 @@ import pandas
 import os
 
 
-def weighted_split(original_test_exec_time_list, weight_list, absolute_machine_speeds):
+def weighted_split_test_exec_time_list(original_test_exec_time_list, weight_list, absolute_machine_speeds):
     machine_i_test_set = []
     machine_i_test_set_exec_time = []
     prev_index = 0
@@ -69,7 +69,7 @@ def main():
     identical_machines_total_execution_time(
         data_set, len(identical_machine_speeds))
 
-    weighted_split(data_set, weighted_machine_speeds, absolute_machine_speeds)
+    weighted_split_test_exec_time_list(data_set, weighted_machine_speeds, absolute_machine_speeds)
     
     
 main()
