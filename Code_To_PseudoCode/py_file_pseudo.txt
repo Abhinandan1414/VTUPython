@@ -1,0 +1,153 @@
+IMPORT math
+
+IMPORT pandas
+
+IMPORT os
+
+
+
+
+
+DEFINE FUNCTION weighted_split_test_exec_time_list(original_test_exec_time_list, weight_list, absolute_machine_speeds):
+
+    SET machine_i_test_set TO []
+
+    SET machine_i_test_set_exec_time TO []
+
+    SET prev_index TO 0
+
+    
+
+    FOR weight IN weight_list:
+
+        SET next_index TO prev_index + math.ceil((len(original_test_exec_time_list) * weight))
+
+        machine_i_test_set.append(original_test_exec_time_list[prev_index: next_index])
+
+        SET prev_index TO next_index
+
+        
+
+    FOR i IN range(len(weight_list)):
+
+        machine_i_test_set_exec_time.append(
+
+            sum(machine_i_test_set[i])/absolute_machine_speeds[i])
+
+    
+
+    OUTPUT(machine_i_test_set)
+
+    FOR i IN range(len(weight_list)):
+
+        OUTPUT("Machine",i,"Will execute the following test cases",machine_i_test_set[i],"in",machine_i_test_set_exec_time[i],"unit time")
+
+       
+
+        
+
+    SET local_sorted_execution_time_on_machines TO sorted(machine_i_test_set_exec_time,reverse=True)
+
+    OUTPUT("Longest time is", local_sorted_execution_time_on_machines[0],"Which is effective execution time")
+
+    
+
+    OUTPUT("All Machines will put together will be busy for",sum(machine_i_test_set_exec_time))
+
+       
+
+
+
+
+
+DEFINE FUNCTION identical_machines_total_execution_time(x, n):
+
+    SET machine_i_test_set TO []
+
+    SET machine_i_test_set_exec_time TO []
+
+    SET x TO sorted(x, reverse=True)
+
+    
+
+    FOR i IN range(n):
+
+        machine_i_test_set.append([])
+
+        
+
+    FOR i IN range(len(x)):
+
+        machine_i_test_set[i % n].append(x[i])
+
+
+
+    FOR i IN range(n):
+
+        machine_i_test_set_exec_time.append(sum(machine_i_test_set[i]))
+
+    
+
+    #OUTPUT(machine_i_test_set)
+
+    
+
+    FOR i IN range(n):
+
+        OUTPUT("Machine",i,"Will execute the following test cases",machine_i_test_set[i],"in",machine_i_test_set_exec_time[i],"unit time")
+
+        #OUTPUT("Test Suite on Machine", i, "Will run for", machine_i_test_set_exec_time[i],"Units of Time")
+
+
+
+        
+
+    SET local_sorted_execution_time_on_machines TO sorted(machine_i_test_set_exec_time,reverse=True)
+
+    OUTPUT("Longest time is", local_sorted_execution_time_on_machines[0],"Which is effective execution time")
+
+    
+
+    OUTPUT("All Machines will put together will be busy for",sum(machine_i_test_set_exec_time))
+
+
+
+
+
+DEFINE FUNCTION main():
+
+    SET df TO pandas.read_csv(os.path.join(os.getcwd(), "Regression\\testexecutiondata.csv"),
+
+                         sep=',')
+
+
+
+    SET data_set TO df["execution_time"].to_list()
+
+    
+
+    OUTPUT("Data set is",data_set)
+
+
+
+    SET absolute_machine_speeds TO [1, 2, 2, 1]
+
+    SET weighted_machine_speeds TO [.16, .32, .32, .16]
+
+    SET identical_machine_speeds TO [1, 1, 1, 1]
+
+    
+
+    identical_machines_total_execution_time(
+
+        data_set, len(identical_machine_speeds))
+
+
+
+    weighted_split_test_exec_time_list(data_set, weighted_machine_speeds, absolute_machine_speeds)
+
+    
+
+    
+
+main()
